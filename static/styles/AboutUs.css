@@ -1,0 +1,19 @@
+.topic{
+          color:black;
+          font-size:30px;
+          font-weight: 600;
+          text-align: center;
+          margin-top:10px;
+
+}
+
+.descrip{
+          color:#5e1524;
+          font-size:20px;
+          font-weight:600;
+          padding:50px;
+          padding-left:200px;
+          padding-right:200px;
+          /* margin:50px; */
+          /* border:1px solid black; */
+}

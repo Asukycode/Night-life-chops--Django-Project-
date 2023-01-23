@@ -1,0 +1,261 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NLC | Night Life Chops</title>
+    <!-- Tailwind css styles -->
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    {% comment %} <script src="https://cdn.tailwindcss.com"></script> {% endcomment %}
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="{% static 'Font_awesome/css/all.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/preloader.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/AboutUs.css' %}">
+     <!-- Swiper css -->
+     <link rel="stylesheet" href="{% static 'styles/cardSlideStyles/swiper-bundle.min.css' %}">
+
+     <!-- Card Styles  -->
+     <link rel="stylesheet" href="{% static 'styles/cardSlideStyles/style.css' %}">
+
+</head>
+
+<script src="{% static 'scripts/smooth_scroll.js'%}"></script>
+<script src="{% static 'scripts/preloader.js'%}"></script>
+<body>
+  <div id="preloader">
+    <div id="loading"></div>
+  </div>
+  
+      <div class="overlay">
+        <div class="glass">
+          <div class="sticky_header">
+            <header class="text-gray-600 body-font ">
+              <div class="container mx-auto flex flex-wrap p-2 px-5 flex-col md:flex-row items-center">
+                  <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+                  <img src="{% static 'images/logo1.png' %}" width="65px">
+                  <span class="ml-3 text-xl  font-bold" style="color:#181E27;">Night Life <span style="color:#FE0435">Chops</span> </span>
+                  </a>
+                  <nav class=" cursor-pointer md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center md:font-medium text-black ">
+                  <a href = "{% url 'core:landing_page' %}" class="mr-5 " style="color:#181E27;">Home</a>
+                  <a href = "{% url 'core:landing_page' %}#menu_point" class="mr-5 " style="color:#181E27;">Menu</a>
+                  <a href = "{% url 'core:dashboard_view' %}" class="mr-5 " style="color:#181E27;">Dashboard</a>
+                  <a href = "{% url 'core:AboutUs' %}" class="mr-5 " style="color:#181E27;">About us</a>
+                  </nav>
+          
+                  <!-- sign up button -->
+                     
+                    <span class="items-center text-base justify-center">
+                      <a style="color:#FE0435;cursor:pointer;" class="inline-flex items-center  py-1 px-3 rounded-full text-base font-medium mt-4 md:mt-0" href="{% url 'account_login'%}">
+                        Sign in
+                      </a>
+                      <a style="background-color:#FE0435; color:white;cursor:pointer;" class="inline-flex items-center  py-1 px-3 rounded-full text-base font-medium mt-4 md:mt-0 " href="{% url 'account_signup'%}">
+                        Sign up
+                      </a>
+                    </span>
+              </div>
+              </header>
+          </div>
+    
+            <!-- Hero page begins -->
+            {% comment %} About us content Begins {% endcomment %}
+
+            <h1 class="topic">About<span style="color:#FE0435;"> us</span></h1>
+
+          <p class="descrip">"Introducing NightLifeChops - the ultimate destination for all your evening snacking needs! Our Ecommerce website specializes in small chops, including delicious options like chicken, samosa, eggroll, puff puff, groundnut, and Casava flakes. We understand that as a university student, managing expenses on food can be tough. That's why we strive to offer satisfying and mood-boosting treats at affordable prices.
+
+                    At NightLifeChops, we believe that every evening should be filled with delicious and satisfying snacks. That's why we operate exclusively in the evening, allowing you to place orders during the day and have them delivered to you at night. Whether you're craving a quick bite before heading out with friends or need a pick-me-up during a late-night study session, NightLifeChops has got you covered.
+                    
+                    So why settle for boring and unsatisfying snacks when you can indulge in the delicious and affordable options at NightLifeChops? Place your order now and experience the ultimate snacking satisfaction!"</p>
+
+
+                       {% comment %} Crew Scetion Begins {% endcomment %}
+
+                       <div>
+                              <h1 class="topic">Creat<span style="color:#FE0435;">ors</span></h1>
+
+                              <section>
+                                        <div class="slide-container swiper">
+                                            <div class="slide-content">
+                                                <div class="card-wrapper swiper-wrapper">
+                                                    {% comment %} Asuquo samuel  {% endcomment %}
+                                
+                                                    <div class="card swiper-slide"><!--food nav_link-->
+                                                        <div class="image-content">
+                                                            <span class="overlay"></span>
+                                
+                                                            <div class="card-image">
+                                                                <img src="{% static 'images/avatar/avatar2.jpg'%}" alt="" class="card-img">
+                                                            </div>
+                                                        </div>
+                                
+                                
+                                                        <div class="card-content">
+                                                            <h2 class="name">Asuquo Samuel</h2>
+                                                            <p class="description">
+                                                                Hi there am a software backend developer
+                                                                with the skill set of Pyhton, Html, Css ,Django, Javascript, C++, C
+                                                            </p>
+                                
+                                                            <button class="button">Contact Me</button>
+                                                        </div>
+                                                    </div>
+
+                                                    {% comment %} Sharon {% endcomment %}
+                                                    <div class="card swiper-slide"><!--food nav_link-->
+                                                            <div class="image-content">
+                                                                <span class="overlay"></span>
+                                    
+                                                                <div class="card-image">
+                                                                    
+                                                                    {% comment %} <img src="{% static 'images/avatar/avatar2.jpg'%}" alt="" class="card-img"> {% endcomment %}
+                                                                </div>
+                                                            </div>
+                                    
+                                    
+                                                            <div class="card-content">
+                                                                <h2 class="name">Sharon Mitee</h2>
+                                                                <p class="description">
+                                                                    Contributor
+                                                                </p>
+                                    
+                                                                <a href="+2349027652078" class="button">Contact Me</a>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="card swiper-slide"><!--food nav_link-->
+                                                            <div class="image-content">
+                                                                <span class="overlay"></span>
+                                    
+                                                                <div class="card-image">
+                                                                    {% comment %} <img src="{% static 'images/avatar/avatar2.jpg'%}" alt="" class="card-img"> {% endcomment %}
+                                                                </div>
+                                                            </div>
+                                    
+                                    
+                                                            <div class="card-content">
+                                                                <h2 class="name">Fortune Faturoti</h2>
+                                                                <p class="description">
+                                                                    Contributor
+                                                                </p>
+                                    
+                                                                <a href="+2348148730883" class="button">Contact Me</a>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="card swiper-slide"><!--food nav_link-->
+                                                            <div class="image-content">
+                                                                <span class="overlay"></span>
+                                    
+                                                                <div class="card-image">
+                                                                    {% comment %} <img src="{% static 'images/avatar/avatar2.jpg'%}" alt="" class="card-img"> {% endcomment %}
+                                                                </div>
+                                                            </div>
+                                    
+                                    
+                                                            <div class="card-content">
+                                                                <h2 class="name">Woyike Destiny</h2>
+                                                                <p class="description">
+                                                                    Hi there am a Frontend developer
+                                                                </p>
+                                    
+                                                                <a href="+2348176439770" class="button">Contact Me</a>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="card swiper-slide"><!--food nav_link-->
+                                                            <div class="image-content">
+                                                                <span class="overlay"></span>
+                                    
+                                                                <div class="card-image">
+                                                                    {% comment %} <img src="{% static 'images/avatar/avatar2.jpg'%}" alt="" class="card-img"> {% endcomment %}
+                                                                </div>
+                                                            </div>
+                                    
+                                    
+                                                            <div class="card-content">
+                                                                <h2 class="name">Noruwa Joshua</h2>
+                                                                <p class="description">
+                                                                   Contributor
+                                                                </p>
+                                    
+                                                                <a href="+2348124837620" class="button">Contact Me</a>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="card swiper-slide"><!--food nav_link-->
+                                                            <div class="image-content">
+                                                                <span class="overlay"></span>
+                                    
+                                                                <div class="card-image">
+                                                                    {% comment %} <img src="{% static 'images/avatar/avatar2.jpg'%}" alt="" class="card-img"> {% endcomment %}
+                                                                </div>
+                                                            </div>
+                                    
+                                    
+                                                            <div class="card-content">
+                                                                <h2 class="name">Akintoye Temi</h2>
+                                                                <p class="description">
+                                                                    Contributor
+                                                                </p>
+                                    
+                                                                <a  href="+2348126678809" class="button">Contact Me</a>
+                                                            </div>
+                                                        </div>
+                                
+                                                 
+                                                </div>
+                                            </div>
+                                
+                                            <!-- swiper buttons -->
+                                            <div class="swiper-button-next swiper-navBtn"></div>
+                                            <div class="swiper-button-prev swiper-navBtn"></div>
+                                            <div class="swiper-pagination"></div>
+                                        </div>
+                                    </section>
+
+                       </div>
+            
+           
+  <!-- footer begins -->
+  
+          <footer class="text-gray-600 body-font">
+            <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+              <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+                <img src="{% static 'images/logo1.png' %}" width="50px">
+                <span class="ml-3 text-xl">Night Life Chops</span>
+              </a>
+              <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">Copyright &copy; 2023 Night Life Chops . All rights reserved  —
+                <a href="#" class="text-gray-600 ml-1" rel="noopener noreferrer" target="_blank">@Night life chops</a>
+              </p>
+              <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+                <a class="text-gray-500">
+                  <i class="fa-brands fa-twitter"></i>
+                </a>
+                <a class="ml-3 text-gray-500">
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a class="ml-3 text-gray-500">
+                  <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a class="ml-3 text-gray-500">
+                  <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+              </span>
+            </div>
+          </footer>
+          
+      <!-- footer ends -->
+  </div>
+  </div>
+                    
+  
+</body>
+
+<script src="{% static 'scripts/swiper-bundle.min.js' %}"></script>
+
+<!-- javascript -->
+<script src="{% static 'scripts/swiper-script.js' %}"></script>
+</html>

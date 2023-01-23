@@ -1,0 +1,350 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NLC | Night Life Chops</title>
+    <!-- Tailwind css styles -->
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="{% static 'Font_awesome/css/all.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/preloader.css' %}">
+</head>
+
+<style>
+  table {
+    margin-left:50px;
+    margin-bottom:100px;
+    font-family: "poppins";
+    border-collapse: collapse;
+    width: 90%;
+    color:white;
+  }
+  
+  td, th {
+
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #FE0435;
+  }
+  tr:nth-child(odd) {
+    color: black;
+  }
+</style>
+
+<script src="{% static 'scripts/slide.js'%}"></script>
+<script src="{% static 'scripts/smooth_scroll.js'%}"></script>
+<script src="{% static 'scripts/preloader.js'%}"></script>
+<body>
+  <div id="preloader">
+    <div id="loading"></div>
+  </div>
+  
+      <div class="overlay">
+        <div class="glass">
+          <div class="sticky_header">
+            <header class="text-gray-600 body-font ">
+              <div class="container mx-auto flex flex-wrap p-2 px-5 flex-col md:flex-row items-center">
+                  <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+                  <img src="{% static 'images/logo1.png' %}" width="65px">
+                  <span class="ml-3 text-xl  font-bold" style="color:#181E27;">Night Life <span style="color:#FE0435">Chops</span> </span>
+                  </a>
+                  <nav class=" cursor-pointer md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center md:font-medium text-black ">
+                  <a href = "" class="mr-5 " style="color:#181E27;">Home</a>
+                  <a href = "#menu_point" class="mr-5 " style="color:#181E27;">Menu</a>
+                  <a href = "{% url 'core:dashboard_view' %}" class="mr-5 " style="color:#181E27;">Dashboard</a>
+                  <a href = "{% url 'core:AboutUs' %}" class="mr-5 " style="color:#181E27;">About us</a>
+                  </nav>
+          
+                  <!-- sign up button -->
+                     
+                    <span class="items-center text-base justify-center">
+                      <a style="color:#FE0435;cursor:pointer;" class="inline-flex items-center  py-1 px-3 rounded-full text-base font-medium mt-4 md:mt-0" href="{% url 'account_login'%}">
+                        Sign in
+                      </a>
+                      <a style="background-color:#FE0435; color:white;cursor:pointer;" class="inline-flex items-center  py-1 px-3 rounded-full text-base font-medium mt-4 md:mt-0 " href="{% url 'account_signup'%}">
+                        Sign up
+                      </a>
+                    </span>
+              </div>
+              </header>
+          </div>
+    
+            <!-- Hero page begins -->
+            <section class="text-gray-600 body-font">
+                <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+                  <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+                    <i class="inline-flex text-gray-700  bg-gray-100 border-0 py-2 px-6 focus:outline-none  rounded-full text-base  shadow-black font-bold"># your No 1 night service  </i>
+                    <h1 class="title-font sm:text-4xl text-3xl mb-4 font-bold text-gray-900">We have
+                      <br class="hidden lg:inline-block"><span style="color:#FE0435;">Delicious Cusine</span>  <br class="hidden lg:inline-block">Prepared for you.
+                    </h1>
+                    <p class="mb-8 leading-relaxed font-medium">Place your order  Get your appetizer <br> Quench your Hunger. </p>
+                    
+                    <div class="flex justify-center">
+                      
+                      <a href="{% url 'core:dashboard_view' %}" style="background-color:#FE0435;cursor:pointer"class="inline-flex text-white font-medium border-0 py-2 px-6 focus:outline-none  rounded-full  ">
+                        Order Now <span><i class="fa-brands fa-opencart ml-2"></i></span> </a>
+                      
+                    </div>
+                  </div>
+                  <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+                    <!-- Carousel slide begins -->
+                    <img  class="object-cover object-center rounded" alt="hero" src="{% static 'images/intro.png'%}" >
+                    <!-- Carousel slide ends -->
+                  </div>
+                </div>
+              </section>
+    
+              <!-- Service section -->
+    
+              <!-- Service header begins -->
+              <div class="flex flex-wrap w-full mb-20 flex-col items-center text-center">
+                <h2 style = "color:#FE0435;" class="font-medium  title-font mb-2">What we serve</h2>
+                <h1 class="font-bold  text-3xl  title-font  text-gray-900">Your Best Option<br> For Night Chops</h1>
+              </div>
+             <!-- Service header ends -->
+    
+             <!--Service content Begins-->
+              <section class="text-gray-600 body-font">
+                <div class="container px-5 py-24 mx-auto mt-6">
+                  <div class="flex flex-wrap -m-4">
+                    
+                    <div class="p-4 lg:w-1/3">
+                      <div class="h-full px-8 pt-16  rounded-lg overflow-hidden text-center relative">
+                        <img src="{% static 'illustrations/EasytoOrder.svg' %}" class="serve">
+                        <h1 class="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3">Easy To Order</h1>
+                        <p class="leading-relaxed mb-3">You only need a few steps <br>in ordering food</p>
+                        
+                      </div>
+                    </div>
+                    <div class="p-4 lg:w-1/3">
+                      <div class="h-full px-8 pt-16  rounded-lg overflow-hidden text-center relative">
+                        <img src="{% static 'illustrations/Fast delivery.svg' %}" class="serve">
+                        <h1 class="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3">Fast to Delivery</h1>
+                        <p class="leading-relaxed mb-3">Delivery that is always ontime <br>even faster</p>
+                        
+                      </div>
+                    </div>
+                    <div class="p-4 lg:w-1/3">
+                      <div class="h-full px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative">
+                        <img src="{% static 'illustrations/Quality.svg' %}" class="serve">
+                        <h1 class="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3">Best Quality</h1>
+                        <p class="leading-relaxed mb-3">We offer the best quality to a dearest customers </p>
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- service content ends -->
+              </section>
+              <!-- service section ends here -->
+    
+            <!-- first Delicious appetizers section begins-->
+            <section class="text-gray-600 body-font">
+              <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+                <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+                  <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Sink Your Teeth into Our Juicy Beef Burger:
+                    <br class="hidden lg:inline-block">A Flavor Explosion in Every Bite
+                  </h1>
+                  <p class="mb-8 leading-relaxed">Introducing our mouth-watering, juicy hamburger, made with 100% all-natural beef and served on a freshly baked bun. The patty is seasoned to perfection and grilled to your liking, providing a satisfying crunch on the outside and a juicy, savory taste on the inside.
+
+                    Topped with crisp lettuce, ripe tomatoes, and onions that have been caramelized to bring out their natural sweetness, this burger is a flavor explosion in every bite. And let's not forget about the cheese, melted to perfection and oozing out the sides.
+                    
+                    Pair it with a side of golden, crispy fries or a side salad, and wash it down with your favorite soda or beer, this burger is the perfect meal for any hamburger lover.
+                    
+                    Experience the taste sensation of our signature hamburger, available at our restaurant!
+                  </p>
+                </div>
+                <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+                  <img class="object-cover object-center rounded" alt="hero" src="{% static 'images//junk food/1.png' %}">
+                </div>
+              </div>
+            </section>
+            <!-- first Delicious appetizers section ends here-->
+  
+                   
+            <!-- Second Delicious appetizers section begins-->
+            <section class="text-gray-600 body-font">
+              <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+                <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mr-6">
+                  <img class="object-cover object-center rounded" alt="hero" src="{% static 'images//junk food/2.png' %}">
+                </div>
+                <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+                  <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Introducing our Specialty Cake: 
+                    <br class="hidden lg:inline-block">A Delicious Treat for the Taste Buds.
+                  </h1>
+                  <p class="mb-8 leading-relaxed">Introducing our delectable and mouth-watering cake, specially made to satisfy your sweet tooth cravings. This rich and moist cake is baked to perfection, infused with the perfect blend of flavors that will tantalize your taste buds.
+
+                    The layers of the cake are made with the finest quality ingredients, including fluffy sponge cake, sweet buttercream frosting and topped off with a sprinkle of powdered sugar. The cake is then finished off with a drizzle of chocolate sauce, adding a hint of decadence to the overall taste.
+                    
+                    The cake is not only a feast for the eyes, with its elegant presentation, but it is also a treat for the taste buds. The moist sponge melts in your mouth, while the frosting and chocolate sauce add a perfect balance of sweetness. Every bite will leave you wanting more. Perfect to share with friends and family or as a personal indulgence.
+                    
+                    This cake is a must-try for anyone looking for a delicious and satisfying dessert experience. Order now and treat yourself to a slice (or two) of heaven!
+                    
+                    <div id="menu_point"></div>
+                    
+                    
+                    </p>
+                </div>
+                
+              </div>
+            </section>
+            <!-- second Delicious appetizers section ends here-->
+  
+            <!-- Categories begins here -->
+            
+            <section class="text-gray-600 body-font" >
+              <div class="flex flex-wrap w-full mb-10 flex-col items-center text-center" >
+                <h1 class="font-bold  text-3xl  title-font mb-2 text-gray-900"> <span style="color:#FE0435;" > Menu<br> <i class="fa-solid fa-martini-glass-citrus"></i> <i class="fa-solid fa-cake-candles"></i> <i class="fa-solid fa-pizza-slice"></i></span></h1>
+              </div>
+              
+              
+              <table>
+                <tr>
+                  <th>Snack</th>
+                  <th>Rating</th>
+                  <th>Price (in Naira)</th>
+                </tr>
+                <tr>
+                  <td>Puff Puff</td>
+                  <td>4.5</td>
+                  <td>50</td>
+                </tr>
+                <tr>
+                  <td>Akara</td>
+                  <td>4.2</td>
+                  <td>30</td>
+                </tr>
+                <tr>
+                  <td>Suya</td>
+                  <td>4.7</td>
+                  <td>200</td>
+                </tr>
+                <tr>
+                  <td>Boli</td>
+                  <td>3.5</td>
+                  <td>20</td>
+                </tr>
+                <tr>
+                  <td>Ewa Agoyin</td>
+                  <td>4.0</td>
+                  <td>50</td>
+                </tr>
+                <tr>
+                  <td>Moi Moi</td>
+                  <td>4.3</td>
+                  <td>40</td>
+                </tr>
+                <tr>
+                  <td>Kulikuli</td>
+                  <td>4.8</td>
+                  <td>60</td>
+                </tr>
+                <tr>
+                  <td>Plantain chips</td>
+                  <td>4.1</td>
+                  <td>50</td>
+                </tr>
+              </table>
+
+            <!-- Categories  Ends-->
+  
+            <!-- Testimonial begins -->
+  
+            <!-- Testimonial header begins -->
+  
+            <div class="flex flex-wrap w-full mb-20 flex-col items-center text-center">
+              <h1 class="font-bold  text-3xl  title-font mb-2 text-gray-900">What Are People<br>Saying<span style="color:#FE0435;"> About Us</span></h1>
+              <h2 class="font-normal text-sm title-font mb-2 text-gray-400 mt-4" >We are very happy if you are satisfied with our <br>services and products, let's read pure reviews from <br>customers who bought our products.</h2>
+            </div>
+           <!-- Testimonial header ends -->
+  
+           <!--Testimonial content Begins-->
+           <div class="container px-5 py-24 mx-auto">
+            <div class="flex flex-wrap -m-4">
+              
+              
+
+              <div class="p-4 lg:w-1/3">
+                <div class=" h-full bg-gray-100 bg-opacity-75 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative">
+                  <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1" style="color:#fe0435;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></h2>
+                  <h1 class="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3">Sarah Johnson</h1>
+                  <p class="leading-relaxed mb-3">"The food at Night life chops is absolutely delicious! 
+                    The flavors are so well-balanced and every dish is beautifully presented.
+                     I couldn't recommend it more highly.".</p>
+                  
+                </div>  
+              </div>
+              <div class="p-4 lg:w-1/3">
+                <div class=" h-full bg-gray-100 bg-opacity-75 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative">
+                  <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1" style="color:#fe0435;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></h2>
+                  <h1 class="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3">Michael Williams</h1>
+                  <p class="leading-relaxed mb-3">"The service at Night life chops is top-notch.
+                     The staff is friendly and attentive, and they really make you feel welcome. 
+                     I love the cozy atmosphere too."</p>
+                  
+                  
+                </div>
+              </div>
+              <div class="p-4 lg:w-1/3">
+                <div class=" h-full bg-gray-100 bg-opacity-75 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative">
+                  <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1" style="color:#fe0435;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></h2>
+                  <h1 class="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3">Emily Davis</h1>
+                  <p class="leading-relaxed mb-3">"I had the pleasure of dining at Night life chops and the experience was truly memorable. 
+                    The unique menu and high-quality ingredients make it a stand-out in the area.
+                     I can't wait to go back."</p>
+                 
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+           
+        <!-- Testimonial content Ends here -->
+
+        <!-- Newsletter begins -->
+        
+        <!-- Newsletter ends -->
+           
+  <!-- footer begins -->
+  
+          <footer class="text-gray-600 body-font">
+            <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+              <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+                <img src="{% static 'images/logo1.png' %}" width="50px">
+                <span class="ml-3 text-xl">Night Life Chops</span>
+              </a>
+              <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">Copyright &copy; 2023 Night Life Chops . All rights reserved  —
+                <a href="#" class="text-gray-600 ml-1" rel="noopener noreferrer" target="_blank">@Night life chops</a>
+              </p>
+              <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+                <a class="text-gray-500">
+                  <i class="fa-brands fa-twitter"></i>
+                </a>
+                <a class="ml-3 text-gray-500">
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a class="ml-3 text-gray-500">
+                  <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a class="ml-3 text-gray-500">
+                  <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+              </span>
+            </div>
+          </footer>
+          
+      <!-- footer ends -->
+  </div>
+  </div>
+                    
+  
+</body>
+</html>

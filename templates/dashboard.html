@@ -1,0 +1,184 @@
+{% load  static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{% static 'styles/dashboard.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'styles/preloader.css' %}"><link rel="stylesheet" href="{% static 'Font_awesome/css/all.css' %}">
+</head>
+{% comment %} <script type="text/javascript">
+    var user = '{{request.user}}'
+
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+    const csrftoken = getCookie('csrftoken');
+          
+</script> {% endcomment %}
+<script src="{% static 'scripts/preloader.js'%}"></script>
+<body>
+    <div id="preloader">
+        <div id="loading"></div>
+    </div>
+<div class="sidebar">
+    <nav>
+        <ul>
+            <li><a href="{% url 'core:landing_page' %}"><i class="fa-solid fa-bars icon burger"></i></a></li>
+            <li><a href="{% url 'core:landing_page' %}"><i class="fa-solid fa-house icon"></i></a></li>
+            <li><a href=""><i class="fa-solid fa-pizza-slice icon"></i></a></li>
+            <li><a href=""><i class="fa-regular fa-user icon"></i></a></li>
+            <li><a href = "{% url 'core:cart_view' %}"><i class="fa-solid fa-cart-shopping icon"></i></a></li>
+            <!-- <li><a href=""><i class="fa-solid fa-gear icon"></i></a></li> -->
+        </ul>
+    </nav>
+  </div>
+  
+  <div class="main">
+    <header>
+        <span class="logo">
+            Night Life <span id="chops">Chops</span>
+        </span>
+        <form style="display:inline" method=POST action="{% url 'core:search_meals' %}">
+        {% csrf_token %}
+            <span class="left_content">
+            <button class="search-btn">Search</button>
+            <span class="search_bar">
+                <input type="search" name="searched_meal"id="search_bar" placeholder=" Search here e.g. cake🍰 , sweet potato🍠">
+            </span>
+        </form>
+            <span class="left_content_icon">
+                <i class="fa-regular fa-bell"></i>
+                <i class="fa-solid fa-gear"></i>
+                
+                {% comment %} <img src="/public/images/avatar/avatar2.JPG" class="user_circle" alt="" width="20px"> {% endcomment %}
+                {% if request.user.is_authenticated %}
+                <span class="user_name">
+                    <i class="fa-solid fa-user-tie"></i>
+                   {{user.username}}
+                   <a style="color:#FE0435;cursor:pointer;" class="inline-flex items-center  py-1 px-3 rounded-full text-base font-medium mt-4 md:mt-0" href="{% url 'account_logout' %}">
+                    Log out
+                    </a>
+                </span>
+                
+                {% else %}
+                        <a style="color:#FE0435;cursor:pointer;" class="inline-flex items-center  py-1 px-3 rounded-full text-base font-medium mt-4 md:mt-0" href="{% url 'account_login' %}">
+                        Sign in
+                        </a>
+                {% endif %}
+                
+            </span>
+        </span>
+    </header>
+    <div class="hr"></div>
+
+    <section>
+
+        <div class="food_filter">
+            <span class="best_food"> Find your best food 🍗🍟🍕</span>
+
+            <span class="food_sort">
+                <select>
+                    <option>Recently added</option>
+                </select>
+
+                <select>
+                    <option>Top Sales</option>
+                </select>
+            </span>
+        </div>
+
+        <!-- Category Begins -->
+        {% comment %} <div class="food_category_nav ">
+            <!-- Each Food -->
+            <a href="#" class="food_nav">
+                <div class="icon-container">
+                    <div class="icon-image">🍟</div>
+                    <div class="icon-name">All</div>
+                </div>
+            </a>
+
+            <a href="#" class="food_nav">
+                <div class="icon-container">
+                    <div class="icon-image">🍕</div>
+                    <div class="icon-name">Pizza</div>
+                </div>
+            </a>
+
+            <a href="#" class="food_nav">
+                <div class="icon-container">
+                    <div class="icon-image">🍥</div>
+                    <div class="icon-name">Cake</div>
+                </div>
+            </a>
+
+            <a href="#" class="food_nav">
+                <div class="icon-container">
+                    <div class="icon-image">🍜</div>
+                    <div class="icon-name">Soup</div>
+                </div>
+            </a>
+
+            
+
+        </div> {% endcomment %}
+
+        <!-- Food display section -->
+        
+
+        
+            <div class="food-display grid-container">
+                {% for meal in meals  %}
+                <section class="food-card-container" class="grid-item">
+            
+                    <img src="{{ meal.image.url }}" alt="{{meal.name}}" srcset="" width="50" class="food_image">
+                    <div class="card">
+                        <div class="content">
+                            <h3>{{meal.name}}</h3>
+                            <p>{{meal.calories_number}} calories {{meal.protein_number}} protein</p>
+                            <div class="details">
+                                <h4>₦{{meal.price}}</h4>
+                                <h4>{{meal.rating}}<span><i class="fa-solid fa-star"></i></span></h4>
+                            </div>
+                            <form style="display:inline;" method="post" action="{% url 'core:add_to_cart' meal.id %}">
+                        {% csrf_token %}
+                                <button class="update-cart" data-product={{meal.id}} data-action='add' type="submit" value="Add to cart">Add to cart <i class="fa-solid fa-cart-plus"></i></button>
+                    </form>
+                    </div>
+                    </div>
+                </section>
+                {% endfor %}
+                    
+                
+                    
+                        
+               
+                
+            </div>
+        
+
+
+                        
+
+    </section>
+  </div>
+       
+</body>
+<script types="text/javascript" src="{% static 'shoppingcart/cart.js'%}"></script>
+</html>

@@ -1,0 +1,38 @@
+{% load  static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="{% static 'styles/dashboard.css' %}">
+    <link rel="stylesheet" href="{% static 'shoppingcart_assets/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'Font_awesome/css/all.css' %}">
+</head>
+
+<body>
+    
+<div class="sidebar">
+    <nav>
+        <ul>
+            <li><a href="{% url 'core:landing_page' %}"><i class="fa-solid fa-bars icon burger"></i></a></li>
+            <li><a href="{% url 'core:landing_page' %}"><i class="fa-solid fa-house icon"></i></a></li>
+            <li><a href="{% url 'core:dashboard_view' %}"><i class="fa-solid fa-pizza-slice icon"></i></a></li>
+            <li><a href=""><i class="fa-regular fa-user icon"></i></a></li>
+            <li><a href = "{% url 'core:cart_view' %}"><i class="fa-solid fa-cart-shopping icon"></i></a></li>
+            <!-- <li><a href=""><i class="fa-solid fa-gear icon"></i></a></li> -->
+        </ul>
+    </nav>
+  </div>
+  
+  <div class="main">
+    <a href ="{% url 'core:cart_view' %}">Back to cart</a>
+    Nothing yet
+  </div>
+       
+</body>
+
+
+</html>
