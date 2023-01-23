@@ -1,0 +1,5 @@
+# Django-Night-Life
+Introducing NightLifeChops - the ultimate destination for all your evening snacking needs! Our Ecommerce website specializes in small chops, including delicious options like chicken, samosa, eggroll, puff puff, groundnut, and Casava flakes. 
+We understand that as a university student, managing expenses on food can be tough. That's why we strive to offer satisfying and mood-boosting treats at affordable prices. At NightLifeChops, we believe that every evening should be filled with delicious and satisfying snacks. That's why we operate exclusively in the evening, allowing you to place orders during the day and have them delivered to you at night. Whether you're craving a quick bite before heading out with friends or need a pick-me-up during a late-night study session, NightLifeChops has got you covered. So why settle for boring and unsatisfying snacks when you can indulge in the delicious and affordable options at NightLifeChops? Place your order now and experience the ultimate snacking satisfaction!"
+
+![Nigh life chops](https://user-images.githubusercontent.com/68717318/213887857-9b6f38e9-cb7c-41a7-a312-746a5be3784e.png)
